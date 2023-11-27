@@ -1,0 +1,161 @@
+.bg-dark-blue{
+    background-color: #002B3B;
+}
+.nav-link{
+    color: #fefefe;
+}
+.active{
+    color: #E71D2A !important;
+}
+.navbar-nav a:hover{
+    color: #E71D2A !important; 
+}
+.no-border-radius .navbar-toggler {
+    border-radius: 0;
+    border: 0;
+}
+/* Navbar Hover */
+.navbar-nav .nav-link {
+    position: relative;
+}
+
+.navbar-nav .nav-link:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 10px;
+}
+/* Navbar Active Effect */
+.navbar-nav .nav-link.active {
+    position: relative;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 10px;
+}
+
+
+#masthead {
+    background-image: url(../images/background.png);
+    background-size: cover;
+    background-position: bottom center;
+    color: #fefefe;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 800px;
+}
+#masthead-light {
+    background-image: url(../images/chatt-sil-light-300ppi.png);
+    background-size: cover;
+    background-position: bottom center;
+    height: 800px;
+}
+#masthead-dark{
+    background-image: url(../images/chatt-sil-300ppi.png);
+    background-size: cover;
+    background-position: bottom center;
+    height: 800px;
+}
+.blue-content{
+    background-color: #002B3B;
+    color: #fefefe;
+}
+.white-content{
+    background-color: #fefefe;
+    color: #002B3B;
+}
+.blue-button{
+    background-color: #002B3B;
+    color: #fefefe;
+}
+.border-danger{
+  border-color: #E71D2A !important;
+}
+.border-warning{
+  border-color: #E0AA0F !important;
+}
+.btn-primary{
+    background-color: #002B3B !important;
+    border-color: #002B3B;
+}
+.btn-primary:hover{
+    border-color: #002B3B;
+    color: #fefefe;
+}
+.btn-warning{
+    background-color: #E0AA0F !important;
+    border-color: #E0AA0F;
+    color: #002B3B;
+}
+.btn-warning:hover{
+    border-color: #E0AA0F;
+    color: #002B3B;
+}
+.btn-danger{
+    background-color: #E71D2A !important;
+    border-color: #E71D2A;
+    color: #002B3B;
+}
+.btn-danger:hover{
+    border-color: #E71D2A;
+    color: #002B3B;
+}
+.border-5{
+    border-width: 15px !important;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 1200px) {
+    #masthead {
+        height: 700px; /* Adjust the height as needed */
+    }
+    #masthead-light {
+        height: 700px; /* Adjust the height as needed */
+    }
+    #masthead-dark {
+        height: 700px; /* Adjust the height as needed */
+    }
+}
+@media (max-width: 992px) {
+    #masthead {
+        height: 600px; /* Adjust the height as needed */
+    }
+    #masthead-light {
+        height: 600px; /* Adjust the height as needed */
+    }
+    #masthead-dark {
+        height: 600px; /* Adjust the height as needed */
+    }
+}
+@media (max-width: 768px) {
+    #masthead {
+        height: 500px; /* Adjust the height as needed */
+    }
+    #masthead-light {
+        height: 500px; /* Adjust the height as needed */
+    }
+    #masthead-dark {
+        height: 500px; /* Adjust the height as needed */
+    }
+}
+@media (max-width: 576px) {
+    #masthead {
+        height: 400px; /* Adjust the height as needed */
+    }
+    #masthead-light {
+        height: 400px; /* Adjust the height as needed */
+    }
+    #masthead-dark {
+        height: 400px; /* Adjust the height as needed */
+    }
+    .navbar-brand img {
+        width: 150px; /* Adjust the size as needed */
+        height: auto;
+    }
+}
+
