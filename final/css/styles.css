@@ -9,7 +9,7 @@
     text-decoration: underline;
     text-decoration-thickness: 2px;
     text-underline-offset: 10px;
-    color: #E71D2A !important
+    color: #E71D2A !important;
 }
 .navbar-nav a:hover{
     color: #E71D2A !important; 
