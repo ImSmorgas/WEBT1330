@@ -35,7 +35,7 @@
 
     <body>
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-sm bg-dark-blue navbar-dark no-border-radius">
+        <nav class="animated-element-no-move navbar navbar-expand-sm bg-dark-blue navbar-dark no-border-radius">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.html">
                     <img src="images/tnflag.png" alt="Logo" width="245" height="61"
@@ -67,7 +67,7 @@
         <!-- Navbar -->
         <!-- Masthead -->
         <header>
-            <div id="masthead-light" class="jumbotron object-fit-cover">
+            <div id="masthead-light" class="animated-element-no-move jumbotron object-fit-cover">
                 <div class="overlay">
                     <div class="position-relative" style="height: 800px;">
                     </div>
@@ -77,7 +77,7 @@
         <!-- Masthead -->
         <!-- Content 1 -->
         <div class="container-fluid white-content">
-            <div class="container-lg mx-auto p-3">
+            <div class="animated-element container-lg mx-auto p-3">
                 <div class="clearfix">
                     <img src="images/follow.png"
                         class="col-md-3 col-sm-6 float-start mb-3 ms-sm-6 p-3 mx-auto img-fluid" alt="">
@@ -108,7 +108,7 @@
         <!-- Content 1 -->
         <!-- Content 2 -->
         <div class="container-fluid blue-content">
-            <div class="container-lg mx-auto py-4 row">
+            <div class="animated-element container-lg mx-auto py-4 row">
                 <div class="col-lg-6 order-lg-1 col-md-6 order-md-1 col-sm-6 order-sm-1 order-2 py-3">
                     <h2 class="text-center">Chattanooga Duck Boat Tours - Navigate the Scenic City by Land and Water
                     </h2>
@@ -123,7 +123,7 @@
                         beauty and rich history of the city.</p>
                     <div class="d-flex align-items-start justify-content-center">
                         <a class="btn btn-danger rounded-0 text-center" href="https://chattanoogaducks.com"
-                            role="button">Visit
+                            target="_blank" role="button">Visit
                             Their
                             Site</a>
                     </div>
@@ -143,7 +143,7 @@
         <!-- Content 2 -->
         <!-- Content 3 -->
         <div class="container-fluid white-content">
-            <div class="container-lg mx-auto py-4 row">
+            <div class="animated-element container-lg mx-auto py-4 row">
                 <div class="col-lg-6 order-lg-1 col-md-6 order-md-1 col-sm-6 order-sm-1 col-12 order-lg-1">
                     <div class="row row-cols-lg-2 cols-md-1">
                         <div class="col-12 col-lg-6 py-3">
@@ -170,7 +170,7 @@
                         a must-visit destination for nature enthusiasts and curious adventurers.</p>
                     <div class="d-flex align-items-start justify-content-center">
                         <a class="btn btn-primary rounded-0 text-center" href="https://www.rubyfalls.com"
-                            role="button">Visit Their
+                            target="_blank" role="button">Visit Their
                             Site</a>
                     </div>
                 </div>
@@ -179,7 +179,7 @@
         <!-- Content 3 -->
         <!-- Content 4 -->
         <div class="container-fluid blue-content">
-            <div class="container-lg mx-auto py-4 row">
+            <div class="animated-element container-lg mx-auto py-4 row">
                 <div class="col-lg-3 order-lg-1 col-md-6 order-md-1 col-sm-6 order-sm-1 col-xs-12 order-1 py-3">
                     <img src="images/392x609whiskey-2.png" class="img-fluid" alt="whiskey counter">
                 </div>
@@ -204,7 +204,7 @@
                     <div class="col-md-12">
                         <div class="text-center">
                             <a class="btn btn-danger rounded-0 text-center" href="https://chattanoogawhiskey.com"
-                                role="button">Visit
+                                target="_blank" role="button">Visit
                                 Their
                                 Site</a>
                         </div>
@@ -218,7 +218,7 @@
         <!-- Content 4 -->
         <!-- Footer -->
         <footer class="blue-content py-3">
-            <div class="container">
+            <div class="animated-element container">
                 <!-- Logo and Links -->
                 <div class="row">
                     <div class="col d-flex flex-column order-sm-1">
@@ -241,6 +241,62 @@
             </div>
         </footer>
         <!-- Footer -->
+        <!-- Animated Elements -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const animatedElements = document.querySelectorAll('.animated-element');
+
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('active');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.15 }); // Adjust threshold based on when you want the animation to start
+
+                animatedElements.forEach(element => {
+                    observer.observe(element);
+                });
+            });
+        </script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const animatedElements = document.querySelectorAll('.animated-element-no-move');
+
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('active');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.15 }); // Adjust threshold based on when you want the animation to start
+
+                animatedElements.forEach(element => {
+                    observer.observe(element);
+                });
+            });
+        </script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const animatedElements = document.querySelectorAll('.animated-element-slow');
+
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('active');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.15 }); // Adjust threshold based on when you want the animation to start
+
+                animatedElements.forEach(element => {
+                    observer.observe(element);
+                });
+            });
+        </script>
+        <!-- Animated Elements -->
     </body>
 
 </html>

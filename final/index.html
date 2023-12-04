@@ -35,7 +35,7 @@
 
     <body>
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-sm bg-dark-blue navbar-dark no-border-radius">
+        <nav class="animated-element-no-move navbar navbar-expand-sm bg-dark-blue navbar-dark no-border-radius">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.html">
                     <img src="images/tnflag.png" alt="Logo" width="245" height="61"
@@ -68,10 +68,10 @@
 
         <!-- Masthead -->
         <header>
-            <div id="masthead" class="jumbotron object-fit-cover">
+            <div id="masthead" class="animated-element-no-move jumbotron object-fit-cover">
                 <div class="overlay">
                     <div class="position-relative">
-                        <h1 id="headerh1" class="display-1 font-serif px-5"
+                        <h1 id="headerh1" class="animated-element-slow display-1 font-serif px-5"
                             style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
                             Visit Beautiful
                             <br>Chattanooga
@@ -83,7 +83,7 @@
         <!-- Masthead -->
         <!-- Content 1 -->
         <div class="container-fluid blue-content">
-            <div class="container-lg mx-auto p-3">
+            <div class="animated-element container-lg mx-auto p-3">
                 <div class="clearfix">
                     <img src="images/have.png" class="col-md-3 col-sm-6 float-start mb-3 ms-sm-6 mx-auto img-fluid p-3"
                         alt="">
@@ -108,7 +108,7 @@
         <!-- Content 1 -->
         <!-- Content 2 -->
         <div class="container-fluid white-content">
-            <div class="container-lg mx-auto p-3 row row-cols-lg-4 row-cols-md-2 row-cols-sm-1">
+            <div class="animated-element container-lg mx-auto p-3 row row-cols-lg-4 row-cols-md-2 row-cols-sm-1">
                 <div class="order-lg-1 order-md-1 order-sm-1 order-2 col-lg-3 col-sm-6 col-xs-12 py-3">
                     <img src="images/392x609aquarium.png" class="img-fluid" alt="...">
                 </div>
@@ -122,7 +122,7 @@
                     <img src="images/explore.png" class="img-fluid" alt="...">
                 </div>
             </div>
-            <div class="container-lg mx-auto p-3 row">
+            <div class="animated-element container-lg mx-auto p-3 row">
                 <div class="col-lg-9 col-xs-12">
                     <p style="text-align: justify;">Embark on a captivating journey through Chattanooga's favorite
                         sights, where
@@ -151,7 +151,7 @@
         <!-- Content 2 -->
         <!-- Content 3 -->
         <div class="container-fluid blue-content">
-            <div class="container-lg mx-auto p-3 row row-cols-lg-4 row-cols-md-2 row-cols-sm-1">
+            <div class="animated-element container-lg mx-auto p-3 row row-cols-lg-4 row-cols-md-2 row-cols-sm-1">
                 <div class="order-lg-1 order-md-2 order-sm-2 order-2 col-lg-3 col-sm-6 col-xs-12 py-3">
                     <img src="images/392x609bitter.png" class="img-fluid" alt="...">
                 </div>
@@ -165,7 +165,7 @@
                     <img src="images/392x609daily-ration.png" class="img-fluid" alt="...">
                 </div>
             </div>
-            <div class="container-lg mx-auto p-3 row">
+            <div class="animated-element container-lg mx-auto p-3 row">
                 <div class="col-lg-9 col-xs-12">
                     <p style="text-align: justify;">Indulge on a culinary journey through the vibrant flavors of
                         Chattanooga at some of the city's
@@ -199,7 +199,7 @@
         <!-- Content 3 -->
         <!-- Content 4 -->
         <div class="container-fluid white-content">
-            <div class="container-lg mx-auto p-3 row row-cols-lg-4 row-cols-md-2 row-cols-sm-1">
+            <div class="animated-element container-lg mx-auto p-3 row row-cols-lg-4 row-cols-md-2 row-cols-sm-1">
                 <div class="order-lg-1 order-md-1 order-sm-1 order-2 col-lg-3 col-sm-6 col-xs-12 py-3">
                     <img src="images/392x609ducktours.png" class="img-fluid" alt="...">
                 </div>
@@ -214,7 +214,7 @@
                 </div>
             </div>
 
-            <div class="container-lg mx-auto p-3 row">
+            <div class="animated-element container-lg mx-auto p-3 row">
                 <div class="col-lg-9 col-xs-12">
                     <p style="text-align: justify;">Set foot on an enriching journey through Chattanooga's
                         captivating
@@ -248,7 +248,7 @@
         <!-- Content 4 -->
         <!-- Footer -->
         <footer class="blue-content py-3">
-            <div class="container">
+            <div class="animated-element container">
                 <!-- Logo and Links -->
                 <div class="row">
                     <div class="col d-flex flex-column order-sm-1">
@@ -271,6 +271,62 @@
             </div>
         </footer>
         <!-- Footer -->
+        <!-- Animated Elements -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const animatedElements = document.querySelectorAll('.animated-element');
+
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('active');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.15 }); // Adjust threshold based on when you want the animation to start
+
+                animatedElements.forEach(element => {
+                    observer.observe(element);
+                });
+            });
+        </script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const animatedElements = document.querySelectorAll('.animated-element-no-move');
+
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('active');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.15 }); // Adjust threshold based on when you want the animation to start
+
+                animatedElements.forEach(element => {
+                    observer.observe(element);
+                });
+            });
+        </script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const animatedElements = document.querySelectorAll('.animated-element-slow');
+
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('active');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.15 }); // Adjust threshold based on when you want the animation to start
+
+                animatedElements.forEach(element => {
+                    observer.observe(element);
+                });
+            });
+        </script>
+        <!-- Animated Elements -->
     </body>
 
 </html>

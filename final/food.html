@@ -45,7 +45,7 @@
 
     <body>
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-sm bg-dark-blue navbar-dark no-border-radius">
+        <nav class="animated-element-no-move navbar navbar-expand-sm bg-dark-blue navbar-dark no-border-radius">
             <div class="container-fluid">
                 <!-- Clickable Nav Logo Image -->
                 <a class="navbar-brand" href="index.html">
@@ -88,7 +88,7 @@
 
         <!-- Masthead -->
         <header>
-            <div id="masthead-dark" class="jumbotron object-fit-cover">
+            <div id="masthead-dark" class="animated-element-no-move jumbotron object-fit-cover">
                 <div class="overlay">
                     <!-- Jumbotron Height. I will adjust this myself as necessary and inform y'all the right height to input before submitting -->
                     <div class="position-relative" style="height: 800px;">
@@ -101,7 +101,7 @@
         <!-- Extended Container for background color -->
         <div class="container-fluid blue-content">
             <!-- Container that holds content -->
-            <div class="container-lg mx-auto p-3">
+            <div class="animated-element container-lg mx-auto p-3">
                 <!-- Image displayed at start with title, paragraph, and text wrapping -->
                 <div class="clearfix">
                     <img src="images/taste.png" class="col-md-3 col-sm-6 float-start mb-3 ms-sm-6 p-3 mx-auto img-fluid"
@@ -135,7 +135,7 @@
         <!-- Extended Container for background color -->
         <div class="container-fluid white-content">
             <!-- Container that holds content -->
-            <div class="container-lg mx-auto py-4 row">
+            <div class="animated-element container-lg mx-auto py-4 row">
                 <!-- Multiple images left justified -->
                 <div class="col-lg-6 order-lg-1 col-md-6 order-md-1 col-sm-6 order-sm-1 col-12 order-lg-1">
                     <div class="row row-cols-lg-2 cols-md-1">
@@ -168,7 +168,7 @@
                     <!-- Button -->
                     <div class="d-flex align-items-start justify-content-center">
                         <a class="btn btn-primary rounded-0 text-center" href="https://www.thebitteralibi.com"
-                            role="button">Visit
+                            target="_blank" role="button">Visit
                             Their
                             Site</a>
                     </div>
@@ -181,7 +181,7 @@
         <!-- Extended Container for background color -->
         <div class="container-fluid blue-content">
             <!-- Container that holds content -->
-            <div class="container-lg mx-auto py-4 row">
+            <div class="animated-element container-lg mx-auto py-4 row">
                 <!-- Image left justified -->
                 <div class="col-lg-3 order-lg-1 col-md-6 order-md-1 col-sm-6 order-sm-1 col-xs-12 order-1 py-3">
                     <img src="images/392x609stir.png" class="img-fluid" alt="...">
@@ -209,7 +209,7 @@
                     <div class="col-md-12">
                         <div class="text-center">
                             <a class="btn btn-warning rounded-0 text-center" href="https://stirchattanooga.com"
-                                role="button">Visit
+                                target="_blank" role="button">Visit
                                 Their
                                 Site</a>
                         </div>
@@ -227,7 +227,7 @@
         <!-- Extended Container for background color -->
         <div class="container-fluid white-content">
             <!-- Container that holds content -->
-            <div class="container-lg mx-auto py-4 row">
+            <div class="animated-element container-lg mx-auto py-4 row">
                 <!-- Text justified left -->
                 <div class="col-lg-6 order-lg-1 col-md-6 order-md-1 col-sm-6 order-sm-1 order-2 py-3">
                     <h2 class="text-center">The Daily Ration - Savoring Every Bite in Chattanooga</h2>
@@ -250,7 +250,7 @@
                     <!-- Button -->
                     <div class="d-flex align-items-start justify-content-center">
                         <a class="btn btn-primary rounded-0 text-center"
-                            href="https://www.thedailyrationchattanooga.com" role="button">Visit
+                            href="https://www.thedailyrationchattanooga.com" target="_blank" role="button">Visit
                             Their
                             Site</a>
                     </div>
@@ -272,7 +272,7 @@
         <!-- Content 4 -->
         <!-- Footer -->
         <footer class="blue-content py-3">
-            <div class="container">
+            <div class="animated-element container">
                 <!-- Logo and Links -->
                 <div class="row">
                     <div class="col d-flex flex-column order-sm-1">
@@ -295,6 +295,62 @@
             </div>
         </footer>
         <!-- Footer -->
+        <!-- Animated Elements -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const animatedElements = document.querySelectorAll('.animated-element');
+
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('active');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.15 }); // Adjust threshold based on when you want the animation to start
+
+                animatedElements.forEach(element => {
+                    observer.observe(element);
+                });
+            });
+        </script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const animatedElements = document.querySelectorAll('.animated-element-no-move');
+
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('active');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.15 }); // Adjust threshold based on when you want the animation to start
+
+                animatedElements.forEach(element => {
+                    observer.observe(element);
+                });
+            });
+        </script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const animatedElements = document.querySelectorAll('.animated-element-slow');
+
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('active');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.15 }); // Adjust threshold based on when you want the animation to start
+
+                animatedElements.forEach(element => {
+                    observer.observe(element);
+                });
+            });
+        </script>
+        <!-- Animated Elements -->
     </body>
 
 </html>
